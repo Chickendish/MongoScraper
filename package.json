@@ -21,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/Chickendish/MongoScraper/issues"
   },
-  "homepage": "https://github.com/Chickendish/MongoScraper#readme"
+  "homepage": "https://github.com/Chickendish/MongoScraper#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.11.13"
+  }
 }

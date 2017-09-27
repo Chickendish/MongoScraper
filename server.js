@@ -2,8 +2,9 @@
 //  Dependencies
 // ==========================================
 const express = require('express');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const expressHandlebars = require('express-handlebars');
+const exphbs = require('express-handlebars');
 
 var PORT = process.env.PORT || 3000;
 
@@ -17,16 +18,29 @@ const router = express.Router();
 app.use(express.static(__dirname + '/public'));
 
 //  Use handlebars for HTML templating
-app.engine('handlebars', expressHandlebars({
+app.engine('handlebars', exphbs({
 	defaultLayout: 'main'
 }));
 
-app.set("view engine", "handlebars");
+app.set('view engine', 'handlebars');
 
 //  Use body-parser middleware
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(router);
+
+// ==========================================
+//  Set up the database
+// ==========================================
+
+const db = process.env.MONGODB_URI || "mongodb://localhost/mongoheadlines";
+
+mongoose.connect(db, (error) =>
+	if (error) {
+		console.log(error);
+	}) else {
+	console.log('Mongoose connection successul!');
+}
 
 app.listen(PORT, ()=>
 	console.log('Listening on port: ' + PORT));
