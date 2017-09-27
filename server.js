@@ -35,12 +35,13 @@ app.use(router);
 
 const db = process.env.MONGODB_URI || "mongodb://localhost/mongoheadlines";
 
-mongoose.connect(db, (error) =>
-	if (error) {
+mongoose.connect(db, function(error){
+	if (error){
 		console.log(error);
-	}) else {
-	console.log('Mongoose connection successul!');
-}
+	} else {
+		console.log("Mongoose connection successful!");
+	}
+})
 
 app.listen(PORT, ()=>
 	console.log('Listening on port: ' + PORT));
