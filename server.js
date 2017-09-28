@@ -14,15 +14,17 @@ const app = express();
 //  Set up Express router
 const router = express.Router();
 
+require("./config/routes")(router);
+
 //  Designated public folder as a static directory
 app.use(express.static(__dirname + '/public'));
 
 //  Use handlebars for HTML templating
-app.engine('handlebars', exphbs({
-	defaultLayout: 'main'
+app.engine("handlebars", exphbs({
+	defaultLayout: "main"
 }));
 
-app.set('view engine', 'handlebars');
+app.set("view engine", "handlebars");
 
 //  Use body-parser middleware
 app.use(bodyParser.urlencoded({ extended: false }))
