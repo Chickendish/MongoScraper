@@ -7,3 +7,7 @@ body {
 	margin-bottom: 80px;
 	background-image: url("../images/coffeeAndNews.jpg");
 }
+
+.nav-item {
+	width: 80px;
+}
