@@ -42,6 +42,34 @@ $(document).ready(function(){
 		articleContainer.append(emptyAlert);
 	}
 
+	function renderNotesList(data) {
+
+		var notesToRender = [];
+		var currentNote;
+		if (!data.notes.length) {
+			currentNote = [
+			"<li class='list-group-item'>",
+			"No notes for this article yet.",
+			"</li>"
+			].join("");
+			notesToRender.push(currentNote);
+		} else {
+			for (var i=0; i < data.notes.length; i++) {
+				currentNote = $([
+				"<li class='list-group-item note'>",
+				data.notes[i].noteText,
+				"<button class='btn btn-danger note-delete'>X</button>",
+				"</li>"
+				].join(""));
+				currentNote.children("button").data("_id", data.notes[i]._id);
+
+				notesToRender.push(currentNote);
+			}
+		}
+		$(".note-container").append(notesToRender);
+
+	}
+
 	function renderArticles(articles){
 		var articlePanels = [];
 		for (var i = 0; i < articles.length; i++) {
