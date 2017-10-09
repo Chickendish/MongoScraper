@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var noteSchema = new Schema ({
 	_headlineID: {
 		type: Schema.Types.ObjectID,
-		ref: Headline
+		ref: "Headline"
 	},
 	date: String,
 	noteText: String
