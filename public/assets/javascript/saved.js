@@ -146,7 +146,6 @@ $(document).ready(function(){
 		});
 	}
 
-
 	function handleNoteSave() {
 
 		var noteData;
