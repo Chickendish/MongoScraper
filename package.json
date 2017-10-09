@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Chickendish/MongoScraper#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
     "express-handlebars": "^3.0.0",
     "mongoose": "^4.11.13"
   }
