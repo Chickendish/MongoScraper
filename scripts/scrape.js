@@ -5,7 +5,7 @@ var scrape = function(callback){
 	request("https://www.nytimes.com", function(err, response, body){
 		var $ = cheerio.load(body);
 		var articles = [];
-		$(.theme-summary).each(function(i, element){
+		$(".theme-summary").each(function(i, element){
 			var head = $(this).children(".story-heading").text().trim();
 			var sum = $(this).children(".summary").text().trim();
 
