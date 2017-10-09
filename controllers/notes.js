@@ -25,7 +25,7 @@ module.exports = {
 	},
 	delete: function(data, callback){
 		Note.remove({
-			_id: data._id,
-		} callback);
+			_id: data._id
+		}, callback);
 	}
-}
+};
